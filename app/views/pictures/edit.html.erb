@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Geometer</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>Edit Picture Details</h1>
+    </div>
+    <form action="http://localhost:3000/update_picture/<%=@picture.id%>">
+      <div>
+        <label for="the_caption">Caption:</label>
+        <input id="the_caption" type="text" name="caption" value=<%=@picture.caption%>>
+      </div>
+      <div>
+        <label for="image_url">Image URL:</label>
+        <input id="image_url" type="text" name="source" value=<%=@picture.source%>>
+      </div>
+      <div>
+        <input type="submit" value="Edit Picture">
+      </div>
+    </form>
+  </div>
+</body>
